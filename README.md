@@ -1,5 +1,5 @@
 # Front Helper
 
-Front Helper for Lunker Media websites.
+Front Helper for MyShoreTours websites.
 
-Follow us on lunkermedia.com
+Follow us on myshoretours.net

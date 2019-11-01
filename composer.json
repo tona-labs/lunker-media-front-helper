@@ -1,0 +1,30 @@
+{
+    "name": "lunker-media/front-helper",
+    "description": "A helper for front end sites for lunker-media",
+    "keywords": [
+        "laravel",
+        "admin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos Escobar",
+            "email": "carlosescobar@weblabor.mx"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^3.4",
+        "tightenco/collect": "*",
+        "stripe/stripe-php": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
