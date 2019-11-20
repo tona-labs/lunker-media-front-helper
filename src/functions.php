@@ -403,6 +403,9 @@ function excludeDates()
         return '[]';
     }
     $tour = getTour();
+    if(!is_object($tour)) {
+        return '[]';
+    }
     if($tour->limit_by_day != 1) {
         $limit = collect($tour->tour_departures)->map(function($item) {
             return $item->limit;
@@ -414,6 +417,10 @@ function excludeDates()
         })->filter(function($item) {
             return $item <= 0;
         })->keys();
+        // If all days are disabled show disabled 6 days, because if are 7 it mark errors
+        if($result->count()==7) {
+            unset($result[6]);
+        }
         return '['.collect($result)->implode(', ').']';
     }
     $limit = $tour->limit;
@@ -422,6 +429,10 @@ function excludeDates()
     })->filter(function($item) {
         return $item <= 0;
     })->keys();
+    // If all days are disabled show disabled 6 days, because if are 7 it mark errors
+    if($result->count()==7) {
+        unset($result[6]);
+    }
     return '['.collect($result)->implode(', ').']';
 }
 
